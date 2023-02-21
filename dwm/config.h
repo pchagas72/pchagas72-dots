@@ -13,7 +13,7 @@ static const char *fonts[]          = { "terminus:size=14", "FontAwesome:size=14
 #include "colors.h"
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "" , "",""};
+static const char *tags[] = { "", "", "","","", "", "" , "", ""};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -21,7 +21,7 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+	{ "Gimp",     NULL,       NULL,       0,            0,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
@@ -33,9 +33,9 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+	{ " tiling",      tile },    /* first entry is default */
+	{ " floating",      NULL },    /* no layout function means floating behavior */
+	{ "M monocle",      monocle },
 };
 
 /* key definitions */
@@ -87,8 +87,8 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_5,                      4)
 	TAGKEYS(                        XK_6,                      5)
 	TAGKEYS(                        XK_7,                      6)
-	//TAGKEYS(                        XK_8,                      7)
-	//TAGKEYS(                        XK_9,                      8)
+	TAGKEYS(                        XK_8,                      7)
+	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
