@@ -1,44 +1,42 @@
 --- dwm.c
 +++ dwm.c
-@@ -762,16 +791,36 @@ drawbar(Monitor *m)
- 	x = drw_text(drw, x, 0, w, bh, lrpad / 2, m->ltsymbol, 0);
- 
- 	if ((w = m->ww - tw - x) > bh) {
--		if (m->sel) {
--			drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
--			drw_text(drw, x, 0, w, bh, lrpad / 2, m->sel->name, 0);
--			if (m->sel->isfloating)
--				drw_rect(drw, x + boxs, boxs, boxw, boxw, m->sel->isfixed, 0);
-+		if (n > 0) {
-+			int remainder = w % n;
-+			int tabw = (1.0 / (double)n) * w + 1;
-+			for (c = m->clients; c; c = c->next) {
-+				if (!ISVISIBLE(c))
-+					continue;
-+				if (m->sel == c)
-+					scm = SchemeSel;
-+				else if (HIDDEN(c))
-+					scm = SchemeHid;
-+				else
-+					scm = SchemeNorm;
-+				drw_setscheme(drw, scheme[scm]);
-+
-+				if (remainder >= 0) {
-+					if (remainder == 0) {
-+						tabw--;
-+					}
-+					remainder--;
-+				}
-+				drw_text(drw, x, 0, tabw, bh, lrpad / 2, c->name, 0);
-+				x += tabw;
-+			}
- 		} else {
- 			drw_setscheme(drw, scheme[SchemeNorm]);
- 			drw_rect(drw, x, 0, w, bh, 1, 1);
- 		}
+@@ -431,18 +431,23 @@ buttonpress(XEvent *e)
  	}
-+	m->bt = n;
-+	m->btw = w;
- 	drw_map(drw, m->barwin, 0, 0, m->ww, bh);
- }
- 
+ 	if (ev->window == selmon->barwin) {
+ 		i = x = 0;
+-		do
+-			x += TEXTW(tags[i]);
+-		while (ev->x >= x && ++i < LENGTH(tags));
+-		if (i < LENGTH(tags)) {
+-			click = ClkTagBar;
+-			arg.ui = 1 << i;
+-		} else if (ev->x < x + blw)
+-			click = ClkLtSymbol;
+-		else if (ev->x > selmon->ww - TEXTW(stext))
+-			click = ClkStatusText;
+-		else
+-			click = ClkWinTitle;
++		x += TEXTW(buttonbar);
++		if(ev->x < x) {
++			click = ClkButton;
++		} else {
++			do
++				x += TEXTW(tags[i]);
++			while (ev->x >= x && ++i < LENGTH(tags));
++			if (i < LENGTH(tags)) {
++				click = ClkTagBar;
++				arg.ui = 1 << i;
++			} else if (ev->x < x + blw)
++				click = ClkLtSymbol;
++			else if (ev->x > selmon->ww - TEXTW(stext))
++				click = ClkStatusText;
++			else
++				click = ClkWinTitle;
++		}
+ 	} else if ((c = wintoclient(ev->window))) {
+ 		focus(c);
+ 		restack(selmon);
+
+		    /*               fg           bg         border                         */
+    [SchemeNorm] = { norm_fg,     norm_bg,   norm_bg }, // unfocused wins
+    [SchemeSel]  = { norm_bg,     norm_fg,    sel_border },  // the focused win
