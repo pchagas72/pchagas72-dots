@@ -23,3 +23,10 @@
   - <b>Slock</b> with one very simple patch 
       - Patch: slock-message
       - Script: LockScreen option in powermenu with cowsay
+      
+## Screenshots:
+<img src="./screenshots/desktop.png"/>
+<img src="./screenshots/neofetch.png"/>
+<img src="./screenshots/1st.png"/>
+<img src="./screenshots/3st.png"/>
+<img src="./screenshots/omg_how_can_he_be_so_bad_at_git.png"/>
