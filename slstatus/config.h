@@ -65,7 +65,6 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format */
-	//{ run_command, " %s | ", "echo $(cat $HOME/.local/src/slstatus/phrase.txt)"},
 	{ cpu_perc, " %s%% | ", NULL },
 	{ ram_perc, " %s%% | ", NULL },
 	{ disk_perc, " %s%% |", "/" },
