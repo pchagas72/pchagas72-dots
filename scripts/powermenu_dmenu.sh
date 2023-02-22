@@ -1,4 +1,4 @@
-PROMPT=$(echo -e "shutdown                 \nreboot\nlogout\nlock-screen" | dmenu -p "powermenu")
+PROMPT=$(echo -e "lock-screen                 \nlogout\nreboot\nshutdown" | dmenu -p "powermenu")
 
 if [ $PROMPT  == "shutdown" ]; then
 	shutdown now
@@ -10,6 +10,6 @@ elif [ $PROMPT == "logout" ]; then
 	loginctl kill-session self
 
 elif [ $PROMPT == "lock-screen" ]; then
-	slock
+	slock -m "$(cowsay 'The screen is locked')"
 
 fi
