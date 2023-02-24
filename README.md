@@ -29,3 +29,10 @@
 <img src="./screenshots/neofetch.png"/>
 <img src="./screenshots/1st.png"/>
 <img src="./screenshots/3st.png"/>
+
+## TODO:
+- Add functionalities to the quick-bookmark.sh script, such as:
+	- Delete and write bookmarks to the bookmarks.txt file.
+	- Move the booksmarks up or down based on last use.
+	- Use title instead of link in prompt.
+- Remove unused variables in DWM.
