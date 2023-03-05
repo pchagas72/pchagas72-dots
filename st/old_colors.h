@@ -21,9 +21,9 @@ const char *colorname[] = {
   [15] = "#cdbcd2", /* white   */
 
   /* special colors */
-  [256] = "#11111b", /* background */
-  [257] = "#cdd6f4", /* foreground */
-  [258] = "#6c7086",     /* cursor */
+  [256] = "#0d0c17", /* background */
+  [257] = "#cdbcd2", /* foreground */
+  [258] = "#cdbcd2",     /* cursor */
 };
 
 /* Default colors (colorname index)
