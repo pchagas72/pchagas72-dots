@@ -7,8 +7,10 @@
  */
 
 static char *font = "Terminus:pixelsize=16:antialias=true:autohint=true";
-static char *font2[] = {
-    "Symbols Nerd Font:pixelsize=14:antialias=true:autohint=true",
+
+    static char *font2[] = {
+    "TerminessTTF Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
+    //"Symbols Nerd Font:pixelsize=17:antialias=true:autohint=true",
 /*	"Hack Nerd Font Mono:pixelsize=11:antialias=true:autohint=true", */
 };
 
