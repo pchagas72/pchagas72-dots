@@ -7,13 +7,13 @@ static const unsigned int gappx     = 12;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char buttonbar[]       = "  ";
-static const char *fonts[]          = { "terminus:size=14", "FontAwesome:size=14" };
+static const char buttonbar[]       = "  ";
+static const char *fonts[]          = { "terminus:size=14", "TerminessTTF Nerd Font Mono:size=24" };
 
 #include "colors.h"
 
 /* tagging */
-static const char *tags[] = { "", "", "","","", "", "" , "", ""};
+static const char *tags[] = { "", "󰈹", "","","", "󰓓", "" , "󰙯", ""};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -33,8 +33,8 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ " tiling",      tile },    /* first entry is default */
-	{ " floating",      NULL },    /* no layout function means floating behavior */
+	{ " tiling",      tile },    /* first entry is default */
+	{ "󰗕 floating",      NULL },    /* no layout function means floating behavior */
 	{ "M monocle",      monocle },
 };
 
