@@ -1,29 +1,39 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const int user_bh            = 30;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
 static const unsigned int gappx     = 12;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char buttonbar[]       = "  ";
-static const char *fonts[]          = { "terminus:size=14", "TerminessTTF Nerd Font Mono:size=24" };
+static const unsigned int baralpha = 0xd0;
+static const unsigned int borderalpha = OPAQUE;
+static const char buttonbar[]       = " <0.0>";
+static const char *fonts[]          = {"scientifica:size=14", "Terminess Nerd Font:size=14"};
 
 #include "colors.h"
 
 /* tagging */
-static const char *tags[] = { "", "󰈹", "","","", "󰓓", "" , "󰙯", ""};
-
+static const char *tags[] = { "[>_]", "[www]", "[3]","[4]","[5]", "[6]", "[7]", "[8]"};
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            0,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	/* class      	     instance    title    tags mask     isfloating   CenterThisWindow?     monitor */
+	{ "st",              NULL,       NULL,    0,            0,     	     1,		           -1 },
+	{ "brave",              NULL,       NULL,    0,            0,     	     0,		           -1 },
+	{ "steam",              NULL,       NULL,    0,            0,     	     0,		           -1 },
+	{ "Alacritty",              NULL,       NULL,    0,            0,     	     1,		           -1 },
 };
+
+static const unsigned int alphas[][3]      = {
+        /*               fg      bg        border     */
+        [SchemeNorm] = { OPAQUE, baralpha, borderalpha },
+        [SchemeSel]  = { OPAQUE, baralpha, borderalpha },
+};
+
 
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
@@ -33,9 +43,9 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ " tiling",      tile },    /* first entry is default */
-	{ "󰗕 floating",      NULL },    /* no layout function means floating behavior */
-	{ "M monocle",      monocle },
+	{ "| Tile",      tile },    /* first entry is default */
+	{ "| Float",      NULL },    /* no layout function means floating behavior */
+	{ "| Mono   ",      monocle },
 };
 
 /* key definitions */
@@ -51,11 +61,14 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
+static const char *roficmd[] = { "rofi", "-show", "drun", NULL };
 static const char *dmenucmd[] = { "dmenu_run", "-l", "4", NULL };
-static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[]  = { "alacritty", NULL };
 static const char *flameshotcmd[]  = { "flameshot", "gui", NULL };
 static const char *powermenu[]  = { "powermenu_dmenu", NULL };
-static const char *quickbookmark[]  = { "quick_bookmark", NULL };
+static const char *emacsclient[]  = { "emacsclient", "-c", NULL };
+static const char *ncmpcpp[]  = { "alacritty", "--command", "ncmpcpp", NULL };
+static const char *lock_screen[] = { "slock", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -63,7 +76,9 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = flameshotcmd } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = powermenu } },
-	{ MODKEY,                       XK_s,      spawn,          {.v = quickbookmark } },
+	{ MODKEY|ShiftMask,             XK_e,      spawn,          {.v = emacsclient } },
+	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lock_screen } },
+	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = ncmpcpp } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },

@@ -6,10 +6,10 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 
-static char *font = "Terminus:pixelsize=16:antialias=true:autohint=true";
+static char *font = "Scientifica:pixelsize=18:antialias=true:autohint=true";
 
     static char *font2[] = {
-    "TerminessTTF Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
+    "scientifica:pixelsize=16:antialias=true:autohint=true",
     //"Symbols Nerd Font:pixelsize=17:antialias=true:autohint=true",
 /*	"Hack Nerd Font Mono:pixelsize=11:antialias=true:autohint=true", */
 };

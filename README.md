@@ -26,13 +26,10 @@
       
 ## Screenshots:
 <img src="./screenshots/desktop.png"/>
-<img src="./screenshots/neofetch.png"/>
-<img src="./screenshots/1st.png"/>
-<img src="./screenshots/3st.png"/>
+<img src="./screenshots/terminal.png"/>
+<img src="./screenshots/emacs.png"/>
+<img src="./screenshots/ncmpcpp.png"/>
+<img src="./screenshots/screen-divided.png"/>
 
 ## TODO:
-- Add functionalities to the quick-bookmark.sh script, such as:
-	- Delete and write bookmarks to the bookmarks.txt file.
-	- Move the booksmarks up or down based on last use.
-	- Use title instead of link in prompt.
-- Remove unused variables in DWM.
+- Nothing

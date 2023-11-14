@@ -28,9 +28,10 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	/* class      	     instance    title    tags mask     isfloating   CenterThisWindow?     monitor */
+	{ "st",              NULL,       NULL,    0,            0,     	     1,		           -1 },
+	{ "Gimp",            NULL,       NULL,    0,            1,           0,                    -1 },
+	{ "Firefox",         NULL,       NULL,    1 << 8,       0,           0,                    -1 },
 };
 
 /* layout(s) */
@@ -103,6 +104,7 @@ static const Key keys[] = {
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
 static const Button buttons[] = {
 	/* click                event mask      button          function        argument */
+	{ ClkButton,		0,		Button1,	spawn,		{.v = dmenucmd } },
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
