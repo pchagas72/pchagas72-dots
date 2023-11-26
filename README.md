@@ -13,6 +13,7 @@
 - Screen Locker: <a href="https://tools.suckless.org/slock/"> Slock </a>
 - Menu: <a href="https://tools.suckless.org/dmenu/"> Dmenu </a>
 - Music: <a href="https://github.com/ncmpcpp/ncmpcpp"> Ncmpcpp </a>
+- DWM dependencies here: <a href="https://wiki.archlinux.org/title/dwm"> Arch Wiki DWM </a>
 
 ## Screenshots:
 <img src="./screenshots/desktop.png"/>
