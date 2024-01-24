@@ -69,12 +69,14 @@ static const char *powermenu[]  = { "powermenu_dmenu", NULL };
 static const char *emacsclient[]  = { "emacsclient", "-c", NULL };
 static const char *ncmpcpp[]  = { "alacritty", "--command", "ncmpcpp", NULL };
 static const char *lock_screen[] = { "slock", NULL };
+static const char *mic_listen[] = { "mic_listen", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = flameshotcmd } },
+	{ MODKEY|ShiftMask,             XK_n,      spawn,          {.v = mic_listen } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = powermenu } },
 	{ MODKEY|ShiftMask,             XK_e,      spawn,          {.v = emacsclient } },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lock_screen } },
