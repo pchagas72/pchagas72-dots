@@ -1,4 +1,4 @@
-### Welcome to my suckless-software forks
+### Welcome to my dotfiles
 
 ## Dependencies:
 
