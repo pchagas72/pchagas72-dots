@@ -1,4 +1,5 @@
 ### Welcome to my dotfiles
+### Everything you need, and just a little bit more
 
 ## Dependencies:
 
