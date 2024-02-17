@@ -15,7 +15,7 @@ static char *font = "Scientifica:pixelsize=18:antialias=true:autohint=true";
 };
 
 static int borderpx = 18;
-float alpha = 0.5;
+float alpha = 0.8;
 
 /*
  * What program is execed by st depends of these precedence rules:

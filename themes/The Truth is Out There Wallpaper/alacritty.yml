@@ -1,0 +1,42 @@
+window:
+  padding:
+    x: 9
+    y: 9
+  opacity: 0.8
+  title: Alacritty
+
+scrolling:
+  history: 10000
+
+font:
+  normal:
+    family: Terminus
+    style: Regular
+
+# BEGIN ACE
+colors:
+  primary:
+    background: '#0f0f0d'
+    foreground: '#efdbcd'
+  cursor:
+    text:       '#0f0f0d'
+    cursor:     '#efdbcd'
+  normal:
+    black:      '#0f0f0d'
+    red:        '#97623E'
+    green:      '#A08B76'
+    yellow:     '#E4A275'
+    blue:       '#758682'
+    magenta:    '#A19D8D'
+    cyan:       '#DCB395'
+    white:      '#efdbcd'
+  bright:
+    black:      '#a7998f'
+    red:        '#97623E'
+    green:      '#A08B76'
+    yellow:     '#E4A275'
+    blue:       '#758682'
+    magenta:    '#A19D8D'
+    cyan:       '#DCB395'
+    white:      '#efdbcd'
+# END ACE

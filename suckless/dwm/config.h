@@ -9,7 +9,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const unsigned int baralpha = 0xd0;
 static const unsigned int borderalpha = OPAQUE;
-static const char buttonbar[]       = " <0.0>";
+static const char buttonbar[]       = " AJLS ";
 static const char *fonts[]          = {"scientifica:size=14", "Terminess Nerd Font:size=14"};
 
 #include "colors.h"
@@ -61,13 +61,11 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *roficmd[] = { "rofi", "-show", "drun", NULL };
 static const char *dmenucmd[] = { "dmenu_run", "-l", "4", NULL };
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *termcmd[]  = { "selected_term", NULL };
 static const char *flameshotcmd[]  = { "flameshot", "gui", NULL };
 static const char *powermenu[]  = { "powermenu_dmenu", NULL };
 static const char *emacsclient[]  = { "emacsclient", "-c", NULL };
-static const char *ncmpcpp[]  = { "alacritty", "--command", "ncmpcpp", NULL };
 static const char *lock_screen[] = { "slock", NULL };
 static const char *mic_listen[] = { "mic_listen", NULL };
 
@@ -80,7 +78,6 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = powermenu } },
 	{ MODKEY|ShiftMask,             XK_e,      spawn,          {.v = emacsclient } },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lock_screen } },
-	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = ncmpcpp } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
