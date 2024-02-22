@@ -10,33 +10,34 @@ scrolling:
 
 font:
   normal:
-    family: Terminus
+    family: Scientifica
     style: Regular
+  size: 11.5
 
 # BEGIN ACE
 colors:
   primary:
-    background: '#0f0f0d'
-    foreground: '#efdbcd'
+    background: '#08050C'
+    foreground: '#aabccc'
   cursor:
-    text:       '#0f0f0d'
-    cursor:     '#efdbcd'
+    text:       '#08050C'
+    cursor:     '#aabccc'
   normal:
-    black:      '#0f0f0d'
-    red:        '#97623E'
-    green:      '#A08B76'
-    yellow:     '#E4A275'
-    blue:       '#758682'
-    magenta:    '#A19D8D'
-    cyan:       '#DCB395'
-    white:      '#efdbcd'
+    black:      '#08050C'
+    red:        '#4C616F'
+    green:      '#98807B'
+    yellow:     '#325188'
+    blue:       '#396490'
+    magenta:    '#4F6A97'
+    cyan:       '#4C67B2'
+    white:      '#aabccc'
   bright:
-    black:      '#a7998f'
-    red:        '#97623E'
-    green:      '#A08B76'
-    yellow:     '#E4A275'
-    blue:       '#758682'
-    magenta:    '#A19D8D'
-    cyan:       '#DCB395'
-    white:      '#efdbcd'
+    black:      '#76838e'
+    red:        '#4C616F'
+    green:      '#98807B'
+    yellow:     '#325188'
+    blue:       '#396490'
+    magenta:    '#4F6A97'
+    cyan:       '#4C67B2'
+    white:      '#aabccc'
 # END ACE
