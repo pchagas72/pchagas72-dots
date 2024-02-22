@@ -3,7 +3,7 @@ static const char norm_bg[] = "#08050C";
 static const char norm_border[] = "#76838e";
 
 static const char sel_fg[] = "#aabccc";
-static const char sel_bg[] = "#98807B";
+static const char sel_bg[] = "#274083";
 static const char sel_border[] = "#aabccc";
 
 static const char urg_fg[] = "#aabccc";
