@@ -1,5 +1,5 @@
 # My day to day dotfiles
-## I use arch btw and wayland
+## I use arch btw and wayland today
 
 ### Screenshots for xorg:
 
