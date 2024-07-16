@@ -1,5 +1,5 @@
 # My day to day dotfiles
-## (I'm using mostly wayland and nixos)
+## I use arch btw and wayland
 
 ### Screenshots for xorg:
 
@@ -10,3 +10,4 @@
 
 ![Alt text](./wayland/screenshots/desktop.png)
 ![Alt text](./wayland/screenshots/neofetch.png)
+![Alt text](./wayland/screenshots/vim.png)
