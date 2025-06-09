@@ -1,0 +1,18 @@
+PROMPT=$(echo -e "lock-screen                 \nshutdown\nreboot\nlogout\nsleep" | dmenu -p "powermenu")
+
+if [ $PROMPT  == "shutdown" ]; then
+	shutdown now
+
+elif [ $PROMPT == "reboot" ]; then
+	reboot
+
+elif [ $PROMPT == "logout" ]; then
+	loginctl kill-session self
+
+elif [ $PROMPT == "lock-screen" ]; then
+	slock -m "$(cowsay 'The screen is locked btw')"
+
+elif [ $PROMPT == "sleep" ]; then
+    systemctl hybrid-sleep && slock -m "$(cowsay 'The screen is locked btw')"
+
+fi
