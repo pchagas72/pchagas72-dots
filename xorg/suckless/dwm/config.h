@@ -9,7 +9,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const unsigned int baralpha = 0xd0;
 static const unsigned int borderalpha = OPAQUE;
-static const char buttonbar[]       = " AJLS ";
+static const char buttonbar[]       = " Bridge ";
 static const char *fonts[]          = {"scientifica:size=14", "Terminess Nerd Font:size=14"};
 
 #include "colors.h"
@@ -26,6 +26,7 @@ static const Rule rules[] = {
 	{ "brave",              NULL,       NULL,    0,            0,     	     0,		           -1 },
 	{ "steam",              NULL,       NULL,    0,            0,     	     0,		           -1 },
 	{ "Alacritty",              NULL,       NULL,    0,            0,     	     1,		           -1 },
+	{ "qutebrowser",              NULL,       NULL,    0,            0,     	     1,		           -1 },
 };
 
 static const unsigned int alphas[][3]      = {
@@ -62,7 +63,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-l", "4", NULL };
-static const char *termcmd[]  = { "selected_term", NULL };
+static const char *termcmd[]  = { "alacritty", NULL };
 static const char *flameshotcmd[]  = { "flameshot", "gui", NULL };
 static const char *powermenu[]  = { "powermenu_dmenu", NULL };
 static const char *emacsclient[]  = { "emacsclient", "-c", NULL };

@@ -1,0 +1,58 @@
+PROMPT=$(echo -e "sundown-live
+firewatch
+tree-live
+anime-girl-sunset-pixel
+hollow-knight-pixel
+sunset-lake-pixel
+atumn-river-pixel
+purple-pixel
+sakura-bridge-pixel
+" | dmenu -p "powermenu")
+
+sundown=$HOME/media/wallpaper/live/sunset.mp4
+tree=$HOME/media/wallpaper/live/silk-tree.mp4
+anime_girl_sunset=$HOME/media/wallpaper/live/anime-girl-watching-sunset.mp4
+hollow_knight_pixel=$HOME/media/wallpaper/live/hollow-knight.mp4
+sunset_lake_pixel=$HOME/media/wallpaper/live/sunset-lake-pixel.mp4
+atumn_river_pixel=$HOME/media/wallpaper/live/autumn-river-pixel.mp4
+purple_pixel=$HOME/media/wallpaper/live/purple-pixel.mp4
+sakura_bridge=$HOME/media/wallpaper/live/black-cat-sakura-bridge-pixel.mp4
+
+if [ $PROMPT  == "sundown-live" ]; then
+    pkill -9 xwinwrap;
+    xwinwrap -g 1920x1080+0+0 -un -fdt -ni -b -nf -ov -- $HOME/.local/scripts/wallpaper-live WID $sundown &
+
+
+elif [ $PROMPT == "tree-live" ]; then
+    pkill -9 xwinwrap
+    xwinwrap -g 1920x1080+0+0 -un -fdt -ni -b -nf -ov -- $HOME/.local/scripts/wallpaper-live WID $tree &
+
+elif [ $PROMPT == "firewatch" ]; then
+    pkill -9 xwinwrap
+    xwallpaper --center $HOME/media/wallpaper/firewatch.png
+
+elif [ $PROMPT == "anime-girl-sunset-pixel" ]; then 
+    pkill -9 xwinwrap
+    xwinwrap -g 1920x1080+0+0 -un -fdt -ni -b -nf -ov -- $HOME/.local/scripts/wallpaper-live WID $anime_girl_sunset &
+
+elif [ $PROMPT == "hollow-knight-pixel" ]; then
+    pkill -9 xwinwrap
+    xwinwrap -g 1920x1080+0+0 -un -fdt -ni -b -nf -ov -- $HOME/.local/scripts/wallpaper-live WID $hollow_knight_pixel &
+
+elif [ $PROMPT == "sunset-lake-pixel" ]; then
+    pkill -9 xwinwrap
+    xwinwrap -g 1920x1080+0+0 -un -fdt -ni -b -nf -ov -- $HOME/.local/scripts/wallpaper-live WID $sunset_lake_pixel &
+
+elif [ $PROMPT == "atumn-river-pixel" ]; then
+    pkill -9 xwinwrap
+    xwinwrap -g 1920x1080+0+0 -un -fdt -ni -b -nf -ov -- $HOME/.local/scripts/wallpaper-live WID $atumn_river_pixel &
+
+elif [ $PROMPT == "purple-pixel" ]; then
+    pkill -9 xwinwrap
+    xwinwrap -g 1920x1080+0+0 -un -fdt -ni -b -nf -ov -- $HOME/.local/scripts/wallpaper-live WID $purple_pixel &
+
+elif [ $PROMPT == "sakura-bridge-pixel" ]; then
+    pkill -9 xwinwrap
+    xwinwrap -g 1920x1080+0+0 -un -fdt -ni -b -nf -ov -- $HOME/.local/scripts/wallpaper-live WID $sakura_bridge &
+
+fi
